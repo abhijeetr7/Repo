@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>What Is Love :)</title>
+    <link
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style/style2.css" />
+  </head>
+  <h1>What Is Love :)</h1>
+  
+  
+    <script>document.addEventListener("DOMContentLoaded", function (event) {
+  // array with texts to type in typewriter
+  var dataText = [
+    "Everyone has their own definition of love but for me it was you. According to me waiting for you and your calls n your text was love for me always being caring for you was love for me and when i was a silent person but still you had tried alot to make me speakable of everything was love for me and many more things which i had lived with you was love for me actually the bond and the feelings we had shared even when we were opposite in some things was love for me Waiting to get seen your story by the person you love most after posting was also love. I always had kept thinking about you even when you didn’t like that was love for me. I kept checking my phone everytime when it rings was love for me, dreaming of being us together was love for me and taking you with me to meet my bappa was love for me. I don’t know does all this are satisfactory answers or not but enjoying every moment with you and creating great memories with you was all the love i lived with you. What was The unconditional love is really been like is i get to know is only with you and when you had came to my life. The emotional touch more than the physical touch and always seeing you happy and succeeding in your life is love for me always keep wishing for you more than anything was love for me. And for the right person it is countlesss, priceless and undefinable that’s why i told you that idk all this are satisfactory answers or not. Keeping your ego and self respect aside and always come asking for the forgiveness even when you’re not wrong is love. Being understanding genuinely not just by acting is also a love ❤️ In last few months being with you i get to know better what is the real love stands for and how it happens with the right person by the time.Love cannot happen by the purpose no one can controls to it, it just happens when you keep thinking about the person and just take your pencil close your eyes and just think about thenm and boom you can sketch them just by reminding every inch of them this is what i had experienced the love the care the waiting for that one person."
+  ];
+
+  // type one text in the typwriter
+  // keeps calling itself until the text is finished
+  function typeWriter(text, i, fnCallback) {
+    // chekc if text isn't finished yet
+    if (i < text.length) {
+      // add next character to h1
+      document.querySelector("h1").innerHTML =
+        text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+
+      // wait for a while and call this function again for next character
+      setTimeout(function () {
+        typeWriter(text, i + 1, fnCallback);
+      }, 100);
+    }
+    // text finished, call callback if there is a callback function
+    else if (typeof fnCallback == "function") {
+      // call callback after timeout
+      setTimeout(fnCallback, 700);
+    }
+  }
+  // start a typewriter animation for a text in the dataText array
+  function StartTextAnimation(i) {
+    if (typeof dataText[i] == "undefined") {
+      setTimeout(function () {
+        StartTextAnimation(0);
+      }, 20000);
+    }
+    // check if dataText[i] exists
+    if (i < dataText[i].length) {
+      // text exists! start typewriter animation
+      typeWriter(dataText[i], 0, function () {
+        // after callback (and whole text has been animated), start next text
+        StartTextAnimation(i + 1);
+      });
+    }
+  }
+  // start the text animation
+  StartTextAnimation(0);
+});
+</script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <!-- <script type="text/babel" src="script/main.js"></script> -->
+</html>
